@@ -1,4 +1,5 @@
-<app-header></app-header> <!-- 這種方式稱作 Directive -->
+<app-header></app-header>
+<!-- 這種方式稱作 Directive -->
 
 <!-- CONTAINER START-->
 <section class="container">
@@ -175,8 +176,15 @@
         <div class="widget search">
           <div class="widget-content">
             <div id="searchbox">
-              <input type="text" placeholder="請輸入搜尋關鍵字" accesskey="s" />
-              <input type="button" value="搜尋" id="searchbutton" />
+              <input
+                type="text"
+                placeholder="請輸入搜尋關鍵字"
+                accesskey="s"
+                [(ngModel)]="keyword"
+              />
+              <!-- need import FormsModle -->
+              <input type="button" value="搜尋" (click)="changeKeyword()" />
+              <pre>{{ keyword }}</pre>
             </div>
           </div>
         </div>
