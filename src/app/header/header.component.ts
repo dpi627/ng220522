@@ -20,6 +20,7 @@ export class HeaderComponent implements OnInit {
     // }, 2000);
   }
 
+  // event 型別如果不確定，可用 console.log(event) 輸出，F12 觀察取得
   changeTitle(event: MouseEvent) {
     console.log(event);
     if (event.altKey) {
