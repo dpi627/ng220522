@@ -20,7 +20,8 @@ export class HeaderComponent implements OnInit {
     // }, 2000);
   }
 
-  changeTitle(){
+  changeTitle(event: MouseEvent) {
+    console.log(event);
     this.sitename = 'The Will Will Web';
   }
 }
