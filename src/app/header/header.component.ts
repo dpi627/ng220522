@@ -15,8 +15,12 @@ export class HeaderComponent implements OnInit {
   //this is Hook method (like Event but not equal)
   //Event can be subscribed, Hook can't
   ngOnInit(): void {
-    setTimeout(() => {
-      this.sitename = 'The Will Will Web';
-    }, 2000);
+    // setTimeout(() => {
+    //   this.sitename = 'The Will Will Web';
+    // }, 2000);
+  }
+
+  changeTitle(){
+    this.sitename = 'The Will Will Web';
   }
 }
