@@ -11,4 +11,8 @@ export class AppComponent {
   doSearch(str: string): void {
     this.keyword = str;
   }
+
+  doSearchClear(dom: HTMLInputElement): void {
+    dom.value = this.keyword = '';
+  }
 }

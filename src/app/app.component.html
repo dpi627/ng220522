@@ -182,6 +182,8 @@
                 placeholder="請輸入搜尋關鍵字"
                 accesskey="s"
                 #tKeyword
+                (keyup.enter)="doSearch(tKeyword.value)"
+                (keyup.escape)="doSearchClear(tKeyword)"
               />
               <!-- need import FormsModle -->
               <input type="button" value="搜尋" (click)="doSearch(tKeyword.value)" /> <!-- tKeyword 相當於 HTMLInputElement，所以可用 DOM 的 property .value -->
