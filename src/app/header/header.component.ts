@@ -22,6 +22,8 @@ export class HeaderComponent implements OnInit {
 
   changeTitle(event: MouseEvent) {
     console.log(event);
-    this.sitename = 'The Will Will Web';
+    if (event.altKey) {
+      this.sitename = 'The Will Will Web';
+    }
   }
 }
