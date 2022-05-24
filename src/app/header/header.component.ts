@@ -9,6 +9,7 @@ export class HeaderComponent implements OnInit {
   sitename = 'Hello World';
   subtitle = '記載著 Will 在網路世界的學習心得與技術分享 !';
   logoid = 'logo';
+  counter = 0;
 
   constructor() {}
 
@@ -22,6 +23,7 @@ export class HeaderComponent implements OnInit {
 
   // event 型別如果不確定，可用 console.log(event) 輸出，F12 觀察取得
   changeTitle(event: MouseEvent) {
+    this.counter++;
     console.log(event);
     if (event.altKey) {
       this.sitename = 'The Will Will Web';
