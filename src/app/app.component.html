@@ -10,12 +10,12 @@
         <pre>{{ 12345 | number }}</pre>
         <pre>{{ 12345.678 | currency: currCode:"symbol":"1.0-2" }}</pre>
         <pre>{{ 0.98 | percent }}</pre>
-        <pre>{{ "A123456789" | mask:'*':3 }}</pre>
+        <pre>{{ "A123456789" | mask: "*":3 }}</pre>
 
         <!-- Article START-->
         <article
           class="post"
-          *ngFor="let item of data; let i = index"
+          *ngFor="let item of (data$ | async); let i = index"
           id="post{{ i }}"
         >
           <header class="post-header">

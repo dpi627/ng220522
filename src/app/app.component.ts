@@ -1,5 +1,6 @@
 import { DataService } from './data.service';
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +9,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit, OnDestroy {
   keyword = 'Andular';
-  data: any[] = [];
+  data$: Observable<any[]> = of([]);
   currCode = 'TWD';
 
   constructor(private svcData: DataService) {
@@ -20,11 +21,12 @@ export class AppComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
-    this.svcData.loadPosts().subscribe({
-      next: (result) => {
-        this.data = result;
-      },
-    });
+    this.data$ = this.svcData.loadPosts();
+    // .subscribe({
+    //   next: (result) => {
+    //     this.data = result;
+    //   },
+    // });
   }
 
   ngOnDestroy(): void {
