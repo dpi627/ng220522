@@ -41,4 +41,8 @@ export class AppComponent implements OnInit, OnDestroy {
   doSearchClear(dom: HTMLInputElement): void {
     dom.value = this.keyword = '';
   }
+
+  doDelete(id: number) {
+    console.log(`Article ${id} deleted.`);
+  }
 }
