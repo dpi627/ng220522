@@ -9,8 +9,13 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 export class AppComponent implements OnInit, OnDestroy {
   keyword = 'Andular';
   data: any[] = [];
+  currCode = 'TWD';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+    setTimeout(() => {
+      this.currCode='JPY'
+    }, 2000);
+  }
 
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
@@ -25,7 +30,6 @@ export class AppComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     //Called once, before the instance is destroyed.
     //Add 'implements OnDestroy' to the class.
-
   }
 
   doSearch(str: string): void {
